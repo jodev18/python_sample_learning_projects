@@ -80,6 +80,12 @@ with open('evaluation_resp.csv') as csvfile:
         well_organization.append(organized)
         manage_climate_orders.append(climate_order_mngt)
         cleanliness_checks.append(cleanliness_check)
+        time_efficiency.append(time_efficiency_d)
+        english_elip.append(english_elip_d)
+        varied_learning_activities.append(vld_d)
+        clear_instructions.append(clear_instruc)
+        mastery_of_subject.append(subj_mastery)
+
 
     print(cleaned_names)
 
