@@ -27,10 +27,10 @@ with open('evaluation_resp.csv') as csvfile:
     personality_fair = []
     comments = []
 
-    row_count = sum(1 for row in csvfile)
-    print("Total row length",row_count)
+    row_count = 0
 
     for row in reader:
+        row_count += 1
         column_keys = row.keys()
         indexed_keys = list(column_keys)
 
@@ -73,6 +73,7 @@ with open('evaluation_resp.csv') as csvfile:
                 cleaned_names.append(' '.join(proc_name[1:]))
         else:
             print("Single name: ",teacher)
+            cleaned_names.append(teacher[0].capitalize())
 
         sections.append(section)
         arrivals.append(arrival)
@@ -90,5 +91,9 @@ with open('evaluation_resp.csv') as csvfile:
 
     cleaned_names.sort()
     print(cleaned_names)
+
+    print("Total number of rows: ",row_count)
+    print("Total number of rows processed: ",len(cleaned_names))
+
 
 
