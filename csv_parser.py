@@ -90,7 +90,7 @@ with open('evaluation_resp.csv') as csvfile:
     print(cleaned_names)
 
     for i in range(len(cleaned_names)):
-        print(cleaned_names[i],sections[i],well_organization[i],manage_climate_orders[i],cleanliness_checks[i],sep="|")
+        print(cleaned_names[i],sections[i],well_organization[i].split()[:-1],manage_climate_orders[i].split()[:-1],cleanliness_checks[i].split()[:-1],time_efficiency[i].split()[:-1],english_elip[i].split()[:-1],sep="|")
 
     print(indexed_keys)
     print("Number of columns processed: ",len(indexed_keys))
