@@ -8,7 +8,7 @@ GPIO.setup(17,GPIO.OUT)
 
 GPIO.setwarnings(False)
 
-authKey = 'Bearer PUT YOUR KEY HERE'
+authKey = 'Bearer YzY0NmUxYjQtMzRkMy00MzBmLWExMDEtNWYzNDg2YzMzN2FkYWZjY2UwZDYtNmM4'
 
 rq = requests.get("https://api.ciscospark.com/v1/rooms", headers={'Authorization':authKey})
 
@@ -18,10 +18,10 @@ x = True
 
 while(x):
     roomToSearch = str(input("Search room:"))
-    rooms = r.json()['items']
+    rooms = rq.json()['items']
     
     for room in rooms:
-        if(ro['title'].find(roomToSearch) != -1):
+        if(room['title'].find(roomToSearch) != -1):
             x = False
             roomIdToMessage = room['id']
             print("Room found," + roomIdToMessage)
@@ -30,9 +30,9 @@ while(x):
     if(roomIdToMessage == None):
         print("Sorry wala")
     
-#     jsonData = r.json()
-#     messages = jsonData['items']
-#     lastMessageId =None
+#      jsonData = r.json()
+#      messages = jsonData['items']
+    lastMessageId =None
     
     while True:
         time.sleep(1)
@@ -56,3 +56,7 @@ while(x):
                 print("Found the secret magic word")
                 
                 GPIO.output(17,True)
+            elif(message['text'] == 'Tenebris'):
+                print("Found the secret magic word")
+                
+                GPIO.output(17,False)
