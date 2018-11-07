@@ -8,7 +8,7 @@ GPIO.setup(17,GPIO.OUT)
 
 GPIO.setwarnings(False)
 
-authKey = 'Bearer YzY0NmUxYjQtMzRkMy00MzBmLWExMDEtNWYzNDg2YzMzN2FkYWZjY2UwZDYtNmM4'
+authKey = 'Bearer PUT YOUR KEY HERE'
 
 rq = requests.get("https://api.ciscospark.com/v1/rooms", headers={'Authorization':authKey})
 
